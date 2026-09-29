@@ -1,0 +1,8 @@
+{
+  "status": "rejected",
+  "decision": {
+    "approved": false,
+    "reviewer": "Automated demo",
+    "note": "Synthetic example rejected for demonstration; no real human approval claimed"
+  }
+}

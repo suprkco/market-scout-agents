@@ -1,0 +1,35 @@
+{
+  "status": "awaiting_review",
+  "thread": "recorded-demo",
+  "review": {
+    "findings": [
+      {
+        "headline": "Synthetic example: document review launch",
+        "category": "product",
+        "source_id": "demo-1",
+        "quote": "Fictional company Northstar announced a launch of its document review prototype. No customer adoption or accuracy results were disclosed. This is synthetic demonstration data, not market news.",
+        "implication": "Unassessed: a human analyst must determine commercial relevance."
+      },
+      {
+        "headline": "Synthetic example: infrastructure funding",
+        "category": "funding",
+        "source_id": "demo-2",
+        "quote": "Fictional company Cedar reported a funding round for local inference infrastructure. The amount and investor identities were not provided. This is synthetic demonstration data, not market news.",
+        "implication": "Unassessed: a human analyst must determine commercial relevance."
+      },
+      {
+        "headline": "Synthetic example: research partnership",
+        "category": "partnership",
+        "source_id": "demo-3",
+        "quote": "Fictional companies Delta and Vale announced a partnership to evaluate retrieval quality. No evaluation results are available. This is synthetic demonstration data, not market news.",
+        "implication": "Unassessed: a human analyst must determine commercial relevance."
+      }
+    ],
+    "concerns": [
+      "Fixture mode is deterministic extraction, not LLM analysis.",
+      "Single-source claims have not been independently corroborated."
+    ],
+    "evidence_digest": "d3693941fa3e61b6581218e848e4028d247c14c2c889429b46132aab97ed46d7",
+    "action": "Approve or reject this local report."
+  }
+}

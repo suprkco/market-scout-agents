@@ -1,0 +1,6 @@
+services:
+  scout:
+    build: .
+    volumes: ["checkpoints:/state"]
+volumes:
+  checkpoints:
