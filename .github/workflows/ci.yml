@@ -14,3 +14,5 @@ jobs:
       - run: pip install -r requirements.txt -r requirements-dev.txt
       - run: ruff check .
       - run: pytest -q
+      - run: docker compose up --build --abort-on-container-exit --exit-code-from scout
+      - run: docker compose run --rm scout python -m scout.cli reject --thread demo --db /state/checkpoints.db --reviewer "CI fixture" --note "Synthetic review-path smoke test"
