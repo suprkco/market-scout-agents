@@ -11,6 +11,8 @@ This prototype turns supplied source records into a structured draft, validates 
 
 ## Demo
 
+The demo runs in the terminal with plain text output. Add `--json` to the demo CLI for the complete machine-readable result.
+
 [Recorded draft awaiting review](docs/demo-pending.json) · [Synthetic rejected report](docs/demo-rejected.json) · [Interview walkthrough](docs/interview.md)
 
 The bundled input is **fictional**, clearly labeled synthetic demonstration data. Default fixture mode uses deterministic extraction, not model inference. It exercises the same graph, schemas, evidence validation and human gate as the optional Ollama mode. Nothing is sent to Slack, email or a publishing service.

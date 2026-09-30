@@ -8,6 +8,21 @@ from langgraph.types import Command
 from scout.graph import build_graph
 
 
+def render(report):
+    lines = ['scout / ' + report.get('status', 'report')]
+    review = report.get('review', report)
+    for finding in review.get('findings', []):
+        lines.extend(['', finding['headline'], '  Source: ' + finding['source_id'],
+                      '  Quote: ' + finding['quote'], '  Implication: ' + finding['implication']])
+    for concern in review.get('concerns', []):
+        lines.append('! ' + concern)
+    if 'decision' in report:
+        lines.extend(['Reviewer: ' + report['decision']['reviewer'], 'Note: ' + report['decision']['note']])
+    if report.get('status') == 'awaiting_review':
+        lines.extend(['', 'Thread: ' + report['thread'], 'Resume with approve or reject, the same --thread and --db, plus --reviewer and --note.'])
+    return ''.join(c if c.isprintable() or c == '\n' else ' ' for c in '\n'.join(lines))
+
+
 def main():
     parser = argparse.ArgumentParser(description='Research, review, then create a local report. Never publishes externally.')
     parser.add_argument('action', choices=['run', 'approve', 'reject'])
@@ -17,6 +32,7 @@ def main():
     parser.add_argument('--mode', choices=['fixture', 'ollama'], default='fixture')
     parser.add_argument('--reviewer')
     parser.add_argument('--note')
+    parser.add_argument('--json', action='store_true', help='Emit the full machine-readable report')
     args = parser.parse_args()
     config = {'configurable': {'thread_id': args.thread}}
     with SqliteSaver.from_conn_string(args.db) as saver:
@@ -36,9 +52,10 @@ def main():
                 parser.error('No pending human review for this thread')
             result = graph.invoke(Command(resume={'approved': args.action == 'approve', 'reviewer': args.reviewer, 'note': args.note}), config)
         if '__interrupt__' in result:
-            print(json.dumps({'status': 'awaiting_review', 'thread': args.thread, 'review': result['__interrupt__'][0].value}, indent=2))
+            report = {'status': 'awaiting_review', 'thread': args.thread, 'review': result['__interrupt__'][0].value}
         else:
-            print(json.dumps(result['report'], indent=2))
+            report = result['report']
+        print(json.dumps(report, indent=2) if args.json else render(report))
 
 if __name__ == '__main__':
     main()
