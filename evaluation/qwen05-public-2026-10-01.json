@@ -1,0 +1,665 @@
+{
+  "started_at": "2026-10-01T10:21:05.155642+00:00",
+  "environment": {
+    "python": "3.10.4",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 140 Stepping 2, GenuineIntel"
+  },
+  "runtime": {
+    "model_repository": "Qwen/Qwen2.5-0.5B-Instruct-GGUF",
+    "model_revision": "9217f5db79a29953eb74d5343926648285ec7e67",
+    "model_file": "qwen2.5-0.5b-instruct-q4_k_m.gguf",
+    "model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+    "model_license": "Apache-2.0",
+    "runtime": "llama.cpp b11317, official Windows CPU x64 binary",
+    "runtime_archive_sha256": "f3b2175f0fc3a7fb1bf53b1eddfeb6fd7a6c34761fec41cb293f6d70ba16288c",
+    "launch_arguments": "--host 127.0.0.1 --port 18089 -c 4096 -t 2 -ngl 0 --parallel 1",
+    "hardware": "Intel Iris Xe laptop; CPU inference only, 16 GiB installed RAM; other user applications running",
+    "model_weights_committed": false,
+    "notes": "Small resource-constrained baseline, not a model selection study. SHA256 checked before loading. First case includes first-request warmup. No provider billing; energy and hardware costs unmeasured."
+  },
+  "sources_sha256": "7403cfcf96ec3f71ef868f76071dbb28b18082cdc16b3a02159dd7adf82b0d02",
+  "cases_sha256": "48943f31fade56784cbe8578ef49a55f880887147a5703ccf2e1154c7357a091",
+  "protocol": "One run per case, no retry or tuning between cases. Paired ablation reuses the exact analyst draft as the single-call baseline. Critic cannot revise claims. HTTP wall times include inference; startup is excluded. No human approval is simulated.",
+  "rows": [
+    {
+      "case": "first-wave",
+      "source_ids": [
+        "ec-2024-12"
+      ],
+      "calls": [
+        {
+          "backend": "llamacpp",
+          "requested_model": "qwen2.5-0.5b-instruct-q4_k_m",
+          "request_sha256": "0c731422e63474d8eb685877a67fbbeb329564ca386be60ab41880e699eead97",
+          "schema": "Findings",
+          "temperature": 0,
+          "seed": 42,
+          "max_output_tokens": 768,
+          "raw_output": "{\n  \"findings\": [\n    {\n      \"headline\": \"First AI Factories selection\",\n      \"category\": \"funding\",\n      \"source_id\": \"ec-2024-12\",\n      \"quote\": \"The first AI Factories will represent a €1.5 billion investment, combining national and EU funding. EuroHPC selected seven proposals in December 2024. The announcement describes selection and planned investment, not measured startup revenue or completed deployment.\",\n      \"implication\": \"The announcement highlights the €1.5 billion investment in AI Factories, which combines national and EU funding, and the selection process, indicating that the investment is part of a larger initiative.\"\n    }\n  ]\n}",
+          "valid_schema": true,
+          "usage": {
+            "completion_tokens": 157,
+            "prompt_tokens": 210,
+            "total_tokens": 367,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "served_model": "C:\\Users\\kilia\\Documents\\Projet GITHUB\\.portfolio-audit\\tools\\scout-model\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 210,
+            "prompt_ms": 981.459,
+            "prompt_per_token_ms": 4.673614285714286,
+            "prompt_per_second": 213.96716521016162,
+            "predicted_n": 157,
+            "predicted_ms": 4249.528,
+            "predicted_per_token_ms": 27.240564102564104,
+            "predicted_per_second": 36.70995931783482
+          },
+          "wall_seconds": 5.351355499995407
+        },
+        {
+          "backend": "llamacpp",
+          "requested_model": "qwen2.5-0.5b-instruct-q4_k_m",
+          "request_sha256": "d7f3dadb3d43ba10e3eae523b4b4b9ee1e3ac725be53e02adad035b87235075d",
+          "schema": "Critique",
+          "temperature": 0,
+          "seed": 42,
+          "max_output_tokens": 768,
+          "raw_output": "{\n  \"concerns\": [\n    \"The announcement does not provide a clear timeline or financial breakdown of the €1.5 billion investment in AI Factories.\",\n    \"The quote does not specify the amount of funding or the total investment, which could lead to misinterpretation of the investment's size.\",\n    \"The statement about the selection process not measuring startup revenue or completed deployment is unclear and could be misleading.\"\n  ]\n}",
+          "valid_schema": true,
+          "usage": {
+            "completion_tokens": 89,
+            "prompt_tokens": 343,
+            "total_tokens": 432,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "served_model": "C:\\Users\\kilia\\Documents\\Projet GITHUB\\.portfolio-audit\\tools\\scout-model\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 343,
+            "prompt_ms": 1630.583,
+            "prompt_per_token_ms": 4.753886297376093,
+            "prompt_per_second": 210.35421073321626,
+            "predicted_n": 89,
+            "predicted_ms": 2179.353,
+            "predicted_per_token_ms": 24.765375000000002,
+            "predicted_per_second": 40.37895650681647
+          },
+          "wall_seconds": 3.837292400014121
+        }
+      ],
+      "findings": [
+        {
+          "headline": "First AI Factories selection",
+          "category": "funding",
+          "source_id": "ec-2024-12",
+          "quote": "The first AI Factories will represent a €1.5 billion investment, combining national and EU funding. EuroHPC selected seven proposals in December 2024. The announcement describes selection and planned investment, not measured startup revenue or completed deployment.",
+          "implication": "The announcement highlights the €1.5 billion investment in AI Factories, which combines national and EU funding, and the selection process, indicating that the investment is part of a larger initiative."
+        }
+      ],
+      "concerns": [
+        "The announcement does not provide a clear timeline or financial breakdown of the €1.5 billion investment in AI Factories.",
+        "The quote does not specify the amount of funding or the total investment, which could lead to misinterpretation of the investment's size.",
+        "The statement about the selection process not measuring startup revenue or completed deployment is unclear and could be misleading."
+      ],
+      "scores": {
+        "findings": 1,
+        "exact_quote_matches": 1,
+        "covered_sources": 1,
+        "supplied_sources": 1
+      },
+      "single_call_seconds": 5.351355499995407,
+      "critic_added_seconds": 3.837292400014121,
+      "pipeline_seconds": 9.201861799985636,
+      "awaiting_human_review": true,
+      "report_emitted": false,
+      "error": null
+    },
+    {
+      "case": "second-wave",
+      "source_ids": [
+        "ec-2025-03"
+      ],
+      "calls": [
+        {
+          "backend": "llamacpp",
+          "requested_model": "qwen2.5-0.5b-instruct-q4_k_m",
+          "request_sha256": "2862da35d4b7d102f95ab62e5e33014a0321466c56748bb6138389bac86a81c8",
+          "schema": "Findings",
+          "temperature": 0,
+          "seed": 42,
+          "max_output_tokens": 768,
+          "raw_output": "{\n  \"findings\": [\n    {\n      \"headline\": \"Second AI Factory selection (March 2025)\",\n      \"category\": \"other\",\n      \"source_id\": \"ec-2025-03\",\n      \"quote\": \"The European High Performance Computing Joint Undertaking (EuroHPC JU) has selected six additional Artificial Intelligence (AI) Factories in the EU. The new locations are Austria, Bulgaria, France, Germany, Poland and Slovenia. Combined national and EU investment is approximately EUR 485 million. The announcement discusses access for startups and SMEs; it does not report observed revenue gains.\",\n      \"implication\": \"The announcement highlights the selection of new AI Factories in the EU, which could be seen as a positive development for innovation and economic growth. However, it does not provide specific information about the observed revenue gains or the impact on the overall economy.\"\n    }\n  ]\n}",
+          "valid_schema": true,
+          "usage": {
+            "completion_tokens": 204,
+            "prompt_tokens": 228,
+            "total_tokens": 432,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "served_model": "C:\\Users\\kilia\\Documents\\Projet GITHUB\\.portfolio-audit\\tools\\scout-model\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 228,
+            "prompt_ms": 1067.543,
+            "prompt_per_token_ms": 4.682206140350877,
+            "prompt_per_second": 213.57453517094862,
+            "predicted_n": 204,
+            "predicted_ms": 5410.331,
+            "predicted_per_token_ms": 26.65187684729064,
+            "predicted_per_second": 37.52080972495028
+          },
+          "wall_seconds": 6.518209700006992
+        },
+        {
+          "backend": "llamacpp",
+          "requested_model": "qwen2.5-0.5b-instruct-q4_k_m",
+          "request_sha256": "665e9b852a043e1407a7bcb414d53a385105c7f2f7ff75c974bd133790d47f87",
+          "schema": "Critique",
+          "temperature": 0,
+          "seed": 42,
+          "max_output_tokens": 768,
+          "raw_output": "{\n  \"concerns\": [\n    \"The announcement does not provide specific information about the observed revenue gains or the impact on the overall economy.\",\n    \"The findings do not discuss the observed revenue gains or the impact on the overall economy.\",\n    \"The announcement does not report observed revenue gains, which could be a significant concern for investors and businesses.\"\n  ]\n}",
+          "valid_schema": true,
+          "usage": {
+            "completion_tokens": 79,
+            "prompt_tokens": 404,
+            "total_tokens": 483,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "served_model": "C:\\Users\\kilia\\Documents\\Projet GITHUB\\.portfolio-audit\\tools\\scout-model\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 404,
+            "prompt_ms": 1986.223,
+            "prompt_per_token_ms": 4.916393564356436,
+            "prompt_per_second": 203.40112867487687,
+            "predicted_n": 79,
+            "predicted_ms": 2097.404,
+            "predicted_per_token_ms": 26.889794871794873,
+            "predicted_per_second": 37.18882961985388
+          },
+          "wall_seconds": 4.103394199977629
+        }
+      ],
+      "findings": [
+        {
+          "headline": "Second AI Factory selection (March 2025)",
+          "category": "other",
+          "source_id": "ec-2025-03",
+          "quote": "The European High Performance Computing Joint Undertaking (EuroHPC JU) has selected six additional Artificial Intelligence (AI) Factories in the EU. The new locations are Austria, Bulgaria, France, Germany, Poland and Slovenia. Combined national and EU investment is approximately EUR 485 million. The announcement discusses access for startups and SMEs; it does not report observed revenue gains.",
+          "implication": "The announcement highlights the selection of new AI Factories in the EU, which could be seen as a positive development for innovation and economic growth. However, it does not provide specific information about the observed revenue gains or the impact on the overall economy."
+        }
+      ],
+      "concerns": [
+        "The announcement does not provide specific information about the observed revenue gains or the impact on the overall economy.",
+        "The findings do not discuss the observed revenue gains or the impact on the overall economy.",
+        "The announcement does not report observed revenue gains, which could be a significant concern for investors and businesses."
+      ],
+      "scores": {
+        "findings": 1,
+        "exact_quote_matches": 1,
+        "covered_sources": 1,
+        "supplied_sources": 1
+      },
+      "single_call_seconds": 6.518209700006992,
+      "critic_added_seconds": 4.103394199977629,
+      "pipeline_seconds": 10.62909820000641,
+      "awaiting_human_review": true,
+      "report_emitted": false,
+      "error": null
+    },
+    {
+      "case": "third-wave",
+      "source_ids": [
+        "ec-2025-10"
+      ],
+      "calls": [
+        {
+          "backend": "llamacpp",
+          "requested_model": "qwen2.5-0.5b-instruct-q4_k_m",
+          "request_sha256": "6f904f1d4d90df7229201e5736ba790aab049e11dddbff7efd62cbda58e5f742",
+          "schema": "Findings",
+          "temperature": 0,
+          "seed": 42,
+          "max_output_tokens": 768,
+          "raw_output": "{\n  \"findings\": [\n    {\n      \"headline\": \"Third AI Factory selection (October 2025)\",\n      \"category\": \"other\",\n      \"source_id\": \"ec-2025-10\",\n      \"quote\": \"This brings the total to 19 AI Factories across 16 Member States. The October announcement adds six locations and describes more than EUR 500 million of joint EU and national investment for this wave. The updated total is time-specific; selection does not establish that every facility is operational.\",\n      \"implication\": \"The October announcement adds six locations and describes more than EUR 500 million of joint EU and national investment for this wave, but it does not establish that every facility is operational. The total is time-specific.\"\n    }\n  ]\n}",
+          "valid_schema": true,
+          "usage": {
+            "completion_tokens": 179,
+            "prompt_tokens": 219,
+            "total_tokens": 398,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "served_model": "C:\\Users\\kilia\\Documents\\Projet GITHUB\\.portfolio-audit\\tools\\scout-model\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 219,
+            "prompt_ms": 1211.631,
+            "prompt_per_token_ms": 5.532561643835617,
+            "prompt_per_second": 180.74809904995828,
+            "predicted_n": 179,
+            "predicted_ms": 4900.198,
+            "predicted_per_token_ms": 27.529202247191012,
+            "predicted_per_second": 36.32506278317733
+          },
+          "wall_seconds": 6.134363999997731
+        },
+        {
+          "backend": "llamacpp",
+          "requested_model": "qwen2.5-0.5b-instruct-q4_k_m",
+          "request_sha256": "5792eafdc552b1c8b8af2b6620c86b1c68facbf7839d69ec088111b7c8644853",
+          "schema": "Critique",
+          "temperature": 0,
+          "seed": 42,
+          "max_output_tokens": 768,
+          "raw_output": "{\n  \"concerns\": [\n    \"The October announcement adds six locations and describes more than EUR 500 million of joint EU and national investment for this wave, but it does not establish that every facility is operational.\",\n    \"The total is time-specific; selection does not establish that every facility is operational.\"\n  ]\n}",
+          "valid_schema": true,
+          "usage": {
+            "completion_tokens": 74,
+            "prompt_tokens": 372,
+            "total_tokens": 446,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "served_model": "C:\\Users\\kilia\\Documents\\Projet GITHUB\\.portfolio-audit\\tools\\scout-model\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 372,
+            "prompt_ms": 1854.83,
+            "prompt_per_token_ms": 4.986102150537635,
+            "prompt_per_second": 200.55746348721988,
+            "predicted_n": 74,
+            "predicted_ms": 1933.624,
+            "predicted_per_token_ms": 26.488,
+            "predicted_per_second": 37.75294472968891
+          },
+          "wall_seconds": 3.803842299967073
+        }
+      ],
+      "findings": [
+        {
+          "headline": "Third AI Factory selection (October 2025)",
+          "category": "other",
+          "source_id": "ec-2025-10",
+          "quote": "This brings the total to 19 AI Factories across 16 Member States. The October announcement adds six locations and describes more than EUR 500 million of joint EU and national investment for this wave. The updated total is time-specific; selection does not establish that every facility is operational.",
+          "implication": "The October announcement adds six locations and describes more than EUR 500 million of joint EU and national investment for this wave, but it does not establish that every facility is operational. The total is time-specific."
+        }
+      ],
+      "concerns": [
+        "The October announcement adds six locations and describes more than EUR 500 million of joint EU and national investment for this wave, but it does not establish that every facility is operational.",
+        "The total is time-specific; selection does not establish that every facility is operational."
+      ],
+      "scores": {
+        "findings": 1,
+        "exact_quote_matches": 1,
+        "covered_sources": 1,
+        "supplied_sources": 1
+      },
+      "single_call_seconds": 6.134363999997731,
+      "critic_added_seconds": 3.803842299967073,
+      "pipeline_seconds": 9.94510100001935,
+      "awaiting_human_review": true,
+      "report_emitted": false,
+      "error": null
+    },
+    {
+      "case": "first-and-second",
+      "source_ids": [
+        "ec-2024-12",
+        "ec-2025-03"
+      ],
+      "calls": [
+        {
+          "backend": "llamacpp",
+          "requested_model": "qwen2.5-0.5b-instruct-q4_k_m",
+          "request_sha256": "1c47fa43b59b3edf4f9194bb0e2174aa9f461f61d6975bb995c1662d58cca94c",
+          "schema": "Findings",
+          "temperature": 0,
+          "seed": 42,
+          "max_output_tokens": 768,
+          "raw_output": "{\n  \"findings\": [\n    {\n      \"headline\": \"First AI Factory selection (December 2024)\",\n      \"category\": \"funding\",\n      \"source_id\": \"ec-2024-12\",\n      \"quote\": \"The first AI Factories will represent a €1.5 billion investment, combining national and EU funding. EuroHPC selected seven proposals in December 2024. The announcement describes selection and planned investment, not measured startup revenue or completed deployment.\",\n      \"implication\": \"The €1.5 billion investment is described as a combined national and EU funding, but the actual amount is not specified.\"\n    },\n    {\n      \"headline\": \"Second AI Factory selection (March 2025)\",\n      \"category\": \"funding\",\n      \"source_id\": \"ec-2025-03\",\n      \"quote\": \"The European High Performance Computing Joint Undertaking (EuroHPC JU) has selected six additional Artificial Intelligence (AI) Factories in the EU. The new locations are Austria, Bulgaria, France, Germany, Poland and Slovenia. Combined national and EU investment is approximately EUR 485 million. The announcement discusses access for startups and SMEs; it does not report observed revenue gains.\",\n      \"implication\": \"The €485 million investment is described as a combined national and EU funding, but the actual amount is not specified.\"\n    }\n  ]\n}",
+          "valid_schema": true,
+          "usage": {
+            "completion_tokens": 320,
+            "prompt_tokens": 368,
+            "total_tokens": 688,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "served_model": "C:\\Users\\kilia\\Documents\\Projet GITHUB\\.portfolio-audit\\tools\\scout-model\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 368,
+            "prompt_ms": 2072.089,
+            "prompt_per_token_ms": 5.630676630434783,
+            "prompt_per_second": 177.59854909707065,
+            "predicted_n": 320,
+            "predicted_ms": 8711.445,
+            "predicted_per_token_ms": 27.30860501567398,
+            "predicted_per_second": 36.61849440592233
+          },
+          "wall_seconds": 10.822947299981024
+        },
+        {
+          "backend": "llamacpp",
+          "requested_model": "qwen2.5-0.5b-instruct-q4_k_m",
+          "request_sha256": "1a12871a085b21cff9ad8bd8b3bd6cb9c3fe120bb6eed58d2ffaff8aa396c02b",
+          "schema": "Critique",
+          "temperature": 0,
+          "seed": 42,
+          "max_output_tokens": 768,
+          "raw_output": "{\n  \"concerns\": [\n    \"The €1.5 billion investment is described as a combined national and EU funding, but the actual amount is not specified.\",\n    \"The €485 million investment is described as a combined national and EU funding, but the actual amount is not specified.\"\n  ]\n}",
+          "valid_schema": true,
+          "usage": {
+            "completion_tokens": 66,
+            "prompt_tokens": 645,
+            "total_tokens": 711,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "served_model": "C:\\Users\\kilia\\Documents\\Projet GITHUB\\.portfolio-audit\\tools\\scout-model\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 645,
+            "prompt_ms": 3317.663,
+            "prompt_per_token_ms": 5.1436635658914724,
+            "prompt_per_second": 194.41395946484013,
+            "predicted_n": 66,
+            "predicted_ms": 1701.505,
+            "predicted_per_token_ms": 26.177000000000003,
+            "predicted_per_second": 38.20147457691866
+          },
+          "wall_seconds": 5.0634581000194885
+        }
+      ],
+      "findings": [
+        {
+          "headline": "First AI Factory selection (December 2024)",
+          "category": "funding",
+          "source_id": "ec-2024-12",
+          "quote": "The first AI Factories will represent a €1.5 billion investment, combining national and EU funding. EuroHPC selected seven proposals in December 2024. The announcement describes selection and planned investment, not measured startup revenue or completed deployment.",
+          "implication": "The €1.5 billion investment is described as a combined national and EU funding, but the actual amount is not specified."
+        },
+        {
+          "headline": "Second AI Factory selection (March 2025)",
+          "category": "funding",
+          "source_id": "ec-2025-03",
+          "quote": "The European High Performance Computing Joint Undertaking (EuroHPC JU) has selected six additional Artificial Intelligence (AI) Factories in the EU. The new locations are Austria, Bulgaria, France, Germany, Poland and Slovenia. Combined national and EU investment is approximately EUR 485 million. The announcement discusses access for startups and SMEs; it does not report observed revenue gains.",
+          "implication": "The €485 million investment is described as a combined national and EU funding, but the actual amount is not specified."
+        }
+      ],
+      "concerns": [
+        "The €1.5 billion investment is described as a combined national and EU funding, but the actual amount is not specified.",
+        "The €485 million investment is described as a combined national and EU funding, but the actual amount is not specified."
+      ],
+      "scores": {
+        "findings": 2,
+        "exact_quote_matches": 2,
+        "covered_sources": 2,
+        "supplied_sources": 2
+      },
+      "single_call_seconds": 10.822947299981024,
+      "critic_added_seconds": 5.0634581000194885,
+      "pipeline_seconds": 15.893995699996594,
+      "awaiting_human_review": true,
+      "report_emitted": false,
+      "error": null
+    },
+    {
+      "case": "second-and-third",
+      "source_ids": [
+        "ec-2025-03",
+        "ec-2025-10"
+      ],
+      "calls": [
+        {
+          "backend": "llamacpp",
+          "requested_model": "qwen2.5-0.5b-instruct-q4_k_m",
+          "request_sha256": "1f8f7ec29d64f0db0bb8c5829839ed4561119afd888e1188ebce79034664cc0f",
+          "schema": "Findings",
+          "temperature": 0,
+          "seed": 42,
+          "max_output_tokens": 768,
+          "raw_output": "{\n  \"findings\": [\n    {\n      \"headline\": \"Second AI Factory selection (March 2025)\",\n      \"category\": \"other\",\n      \"source_id\": \"ec-2025-03\",\n      \"quote\": \"The European High Performance Computing Joint Undertaking (EuroHPC JU) has selected six additional Artificial Intelligence (AI) Factories in the EU. The new locations are Austria, Bulgaria, France, Germany, Poland and Slovenia. Combined national and EU investment is approximately EUR 485 million.\",\n      \"implication\": \"The announcement discusses access for startups and SMEs; it does not report observed revenue gains.\"\n    },\n    {\n      \"headline\": \"Third AI Factory selection (October 2025)\",\n      \"category\": \"other\",\n      \"source_id\": \"ec-2025-10\",\n      \"quote\": \"This brings the total to 19 AI Factories across 16 Member States. The October announcement adds six locations and describes more than EUR 500 million of joint EU and national investment for this wave. The updated total is time-specific; selection does not establish that every facility is operational.\",\n      \"implication\": \"The updated total is time-specific; selection does not establish that every facility is operational.\"\n    }\n  ]\n}",
+          "valid_schema": true,
+          "usage": {
+            "completion_tokens": 297,
+            "prompt_tokens": 377,
+            "total_tokens": 674,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "served_model": "C:\\Users\\kilia\\Documents\\Projet GITHUB\\.portfolio-audit\\tools\\scout-model\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 377,
+            "prompt_ms": 1885.608,
+            "prompt_per_token_ms": 5.001612732095491,
+            "prompt_per_second": 199.93551151670974,
+            "predicted_n": 297,
+            "predicted_ms": 7984.595,
+            "predicted_per_token_ms": 26.97498310810811,
+            "predicted_per_second": 37.07138558687072
+          },
+          "wall_seconds": 9.904269299993757
+        },
+        {
+          "backend": "llamacpp",
+          "requested_model": "qwen2.5-0.5b-instruct-q4_k_m",
+          "request_sha256": "a8e8413aa46a6268207a4cda808f5a08905be017c22266776066798eced21b02",
+          "schema": "Critique",
+          "temperature": 0,
+          "seed": 42,
+          "max_output_tokens": 768,
+          "raw_output": "{\n  \"concerns\": [\n    \"The announcement discusses access for startups and SMEs; it does not report observed revenue gains.\",\n    \"The updated total is time-specific; selection does not establish that every facility is operational.\"\n  ]\n}",
+          "valid_schema": true,
+          "usage": {
+            "completion_tokens": 51,
+            "prompt_tokens": 629,
+            "total_tokens": 680,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "served_model": "C:\\Users\\kilia\\Documents\\Projet GITHUB\\.portfolio-audit\\tools\\scout-model\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 629,
+            "prompt_ms": 3185.133,
+            "prompt_per_token_ms": 5.063804451510333,
+            "prompt_per_second": 197.4799796429223,
+            "predicted_n": 51,
+            "predicted_ms": 1299.385,
+            "predicted_per_token_ms": 25.9877,
+            "predicted_per_second": 38.4797423396453
+          },
+          "wall_seconds": 4.5218333000084385
+        }
+      ],
+      "findings": [
+        {
+          "headline": "Second AI Factory selection (March 2025)",
+          "category": "other",
+          "source_id": "ec-2025-03",
+          "quote": "The European High Performance Computing Joint Undertaking (EuroHPC JU) has selected six additional Artificial Intelligence (AI) Factories in the EU. The new locations are Austria, Bulgaria, France, Germany, Poland and Slovenia. Combined national and EU investment is approximately EUR 485 million.",
+          "implication": "The announcement discusses access for startups and SMEs; it does not report observed revenue gains."
+        },
+        {
+          "headline": "Third AI Factory selection (October 2025)",
+          "category": "other",
+          "source_id": "ec-2025-10",
+          "quote": "This brings the total to 19 AI Factories across 16 Member States. The October announcement adds six locations and describes more than EUR 500 million of joint EU and national investment for this wave. The updated total is time-specific; selection does not establish that every facility is operational.",
+          "implication": "The updated total is time-specific; selection does not establish that every facility is operational."
+        }
+      ],
+      "concerns": [
+        "The announcement discusses access for startups and SMEs; it does not report observed revenue gains.",
+        "The updated total is time-specific; selection does not establish that every facility is operational."
+      ],
+      "scores": {
+        "findings": 2,
+        "exact_quote_matches": 2,
+        "covered_sources": 2,
+        "supplied_sources": 2
+      },
+      "single_call_seconds": 9.904269299993757,
+      "critic_added_seconds": 4.5218333000084385,
+      "pipeline_seconds": 14.434305100003257,
+      "awaiting_human_review": true,
+      "report_emitted": false,
+      "error": null
+    },
+    {
+      "case": "first-and-third",
+      "source_ids": [
+        "ec-2024-12",
+        "ec-2025-10"
+      ],
+      "calls": [
+        {
+          "backend": "llamacpp",
+          "requested_model": "qwen2.5-0.5b-instruct-q4_k_m",
+          "request_sha256": "a392149a7ff78629d9efe05fa81811ed0bba07cd8a687a4664e0df5e38af70b1",
+          "schema": "Findings",
+          "temperature": 0,
+          "seed": 42,
+          "max_output_tokens": 768,
+          "raw_output": "{\n  \"findings\": [\n    {\n      \"headline\": \"First AI Factory selection (December 2024)\",\n      \"category\": \"funding\",\n      \"source_id\": \"ec-2024-12\",\n      \"quote\": \"The first AI Factories will represent a €1.5 billion investment, combining national and EU funding. EuroHPC selected seven proposals in December 2024. The announcement describes selection and planned investment, not measured startup revenue or completed deployment.\",\n      \"implication\": \"The €1.5 billion investment is the total amount of funding for the first AI Factories, but it does not indicate the startup revenue or completed deployment of any of the selected facilities.\"\n    },\n    {\n      \"headline\": \"Third AI Factory selection (October 2025)\",\n      \"category\": \"funding\",\n      \"source_id\": \"ec-2025-10\",\n      \"quote\": \"This brings the total to 19 AI Factories across 16 Member States. The October announcement adds six locations and describes more than EUR 500 million of joint EU and national investment for this wave. The updated total is time-specific; selection does not establish that every facility is operational.\",\n      \"implication\": \"The total of 19 AI Factories across 16 Member States is the total amount of funding for the third wave, but it does not indicate the startup revenue or completed deployment of any of the selected facilities.\"\n    }\n  ]\n}",
+          "valid_schema": true,
+          "usage": {
+            "completion_tokens": 333,
+            "prompt_tokens": 359,
+            "total_tokens": 692,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "served_model": "C:\\Users\\kilia\\Documents\\Projet GITHUB\\.portfolio-audit\\tools\\scout-model\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 359,
+            "prompt_ms": 1787.859,
+            "prompt_per_token_ms": 4.980108635097493,
+            "prompt_per_second": 200.79883257012997,
+            "predicted_n": 333,
+            "predicted_ms": 8981.05,
+            "predicted_per_token_ms": 27.051355421686743,
+            "predicted_per_second": 36.96672438077953
+          },
+          "wall_seconds": 10.810792099975515
+        },
+        {
+          "backend": "llamacpp",
+          "requested_model": "qwen2.5-0.5b-instruct-q4_k_m",
+          "request_sha256": "9b0a5c6cb2a6f702d97088e64958f4875c6c33a882edeb38013d611957455cf3",
+          "schema": "Critique",
+          "temperature": 0,
+          "seed": 42,
+          "max_output_tokens": 768,
+          "raw_output": "{\n  \"concerns\": [\n    \"The €1.5 billion investment mentioned in the first AI Factory selection (December 2024) is the total amount of funding for the first AI Factories, but it does not indicate the startup revenue or completed deployment of any of the selected facilities.\",\n    \"The €1.5 billion investment in the third AI Factory selection (October 2025) is the total amount of funding for the third wave, but it does not indicate the startup revenue or completed deployment of any of the selected facilities.\",\n    \"The total of 19 AI Factories across 16 Member States is the total amount of funding for the third wave, but it does not indicate the startup revenue or completed deployment of any of the selected facilities.\"\n  ]\n}",
+          "valid_schema": true,
+          "usage": {
+            "completion_tokens": 165,
+            "prompt_tokens": 651,
+            "total_tokens": 816,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "served_model": "C:\\Users\\kilia\\Documents\\Projet GITHUB\\.portfolio-audit\\tools\\scout-model\\qwen2.5-0.5b-instruct-q4_k_m.gguf",
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 651,
+            "prompt_ms": 3378.96,
+            "prompt_per_token_ms": 5.190414746543778,
+            "prompt_per_second": 192.66283116698628,
+            "predicted_n": 165,
+            "predicted_ms": 4302.868,
+            "predicted_per_token_ms": 26.237000000000002,
+            "predicted_per_second": 38.114113656286925
+          },
+          "wall_seconds": 7.7187898000120185
+        }
+      ],
+      "findings": [
+        {
+          "headline": "First AI Factory selection (December 2024)",
+          "category": "funding",
+          "source_id": "ec-2024-12",
+          "quote": "The first AI Factories will represent a €1.5 billion investment, combining national and EU funding. EuroHPC selected seven proposals in December 2024. The announcement describes selection and planned investment, not measured startup revenue or completed deployment.",
+          "implication": "The €1.5 billion investment is the total amount of funding for the first AI Factories, but it does not indicate the startup revenue or completed deployment of any of the selected facilities."
+        },
+        {
+          "headline": "Third AI Factory selection (October 2025)",
+          "category": "funding",
+          "source_id": "ec-2025-10",
+          "quote": "This brings the total to 19 AI Factories across 16 Member States. The October announcement adds six locations and describes more than EUR 500 million of joint EU and national investment for this wave. The updated total is time-specific; selection does not establish that every facility is operational.",
+          "implication": "The total of 19 AI Factories across 16 Member States is the total amount of funding for the third wave, but it does not indicate the startup revenue or completed deployment of any of the selected facilities."
+        }
+      ],
+      "concerns": [
+        "The €1.5 billion investment mentioned in the first AI Factory selection (December 2024) is the total amount of funding for the first AI Factories, but it does not indicate the startup revenue or completed deployment of any of the selected facilities.",
+        "The €1.5 billion investment in the third AI Factory selection (October 2025) is the total amount of funding for the third wave, but it does not indicate the startup revenue or completed deployment of any of the selected facilities.",
+        "The total of 19 AI Factories across 16 Member States is the total amount of funding for the third wave, but it does not indicate the startup revenue or completed deployment of any of the selected facilities."
+      ],
+      "scores": {
+        "findings": 2,
+        "exact_quote_matches": 2,
+        "covered_sources": 2,
+        "supplied_sources": 2
+      },
+      "single_call_seconds": 10.810792099975515,
+      "critic_added_seconds": 7.7187898000120185,
+      "pipeline_seconds": 18.53718330000993,
+      "awaiting_human_review": true,
+      "report_emitted": false,
+      "error": null
+    }
+  ],
+  "summary": {
+    "cases": 6,
+    "completed_to_human_gate": 6,
+    "failed_cases": 0,
+    "reports_emitted_without_human": 0,
+    "findings": 9,
+    "exact_quote_matches": 9,
+    "covered_sources": 9,
+    "supplied_sources": 9,
+    "single_call_median_seconds": 8.211239500000374,
+    "pipeline_median_seconds": 12.531701650004834,
+    "human_review_seconds": null,
+    "semantic_accuracy": null,
+    "provider_charge_usd": 0,
+    "electricity_and_hardware_cost_usd": null
+  },
+  "finished_at": "2026-10-01T10:22:23.854552+00:00",
+  "hash_policy": "UTF-8 bytes with CRLF normalized to LF for cross-platform checkouts"
+}

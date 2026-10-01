@@ -1,0 +1,15 @@
+Original project code is provided under the MIT license in LICENSE.
+
+The real-model experiment uses Qwen/Qwen2.5-0.5B-Instruct-GGUF,
+released by the Qwen team under Apache-2.0:
+https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF
+Model weights are not redistributed in this repository.
+
+llama.cpp is an external MIT-licensed inference runtime:
+https://github.com/ggml-org/llama.cpp
+Its binaries are not redistributed here.
+
+Public-source briefs attribute European Commission / DG CONNECT announcements.
+Publication dates, original URLs, short verbatim excerpts, editorial paraphrases
+and source hashes are identified in data/public_sources.provenance.json.
+The project license does not replace upstream rights or imply endorsement.

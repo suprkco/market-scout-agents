@@ -1,0 +1,24 @@
+{
+  "report": "qwen05-public-2026-10-01.json",
+  "method": "AI-assisted inspection by the coding assistant against the supplied briefs, after inference. Not an independent human gold standard, automated judge score, or validated accuracy estimate. Each label covers the complete finding including its implication.",
+  "human_review_pending": true,
+  "findings": [
+    {"case":"first-wave","index":0,"label":"supported","reason":"The brief supplies the investment and selection; the broader-initiative phrasing is general, not a quantified outcome."},
+    {"case":"second-wave","index":0,"label":"supported","reason":"The growth implication is explicitly tentative; the absence of observed revenue data is correctly stated."},
+    {"case":"third-wave","index":0,"label":"supported","reason":"Preserves the wave investment and distinguishes selection from operational status."},
+    {"case":"first-and-second","index":0,"label":"contradicted","reason":"Says the actual investment amount is not specified while both the brief and its own implication specify EUR 1.5 billion."},
+    {"case":"first-and-second","index":1,"label":"contradicted","reason":"Says the actual investment amount is not specified while the brief gives approximately EUR 485 million."},
+    {"case":"second-and-third","index":0,"label":"supported","reason":"Preserves the distinction between announced access and observed revenue."},
+    {"case":"second-and-third","index":1,"label":"supported","reason":"Preserves the time-specific total and selection/deployment distinction."},
+    {"case":"first-and-third","index":0,"label":"supported","reason":"Correctly describes planned investment without claiming measured revenue or completed deployment."},
+    {"case":"first-and-third","index":1,"label":"contradicted","reason":"Conflates a count (19 factories in 16 states) with an amount of funding."}
+  ],
+  "critic_failures": [
+    {"case":"first-wave","concern_index":1,"reason":"Claims the quote does not specify investment size even though it states EUR 1.5 billion."},
+    {"case":"first-and-second","concern_index":0,"reason":"Repeats the analyst's false assertion that the investment amount is unspecified."},
+    {"case":"first-and-second","concern_index":1,"reason":"Repeats the analyst's false assertion that the investment amount is unspecified."},
+    {"case":"first-and-third","concern_index":1,"reason":"Incorrectly transfers the first-wave EUR 1.5 billion figure to the third wave."},
+    {"case":"first-and-third","concern_index":2,"reason":"Repeats the confusion between a count of factories/states and a funding amount."}
+  ],
+  "conclusion":"Exact citation matching succeeded but did not prevent semantic errors. The critic cannot edit the draft, and inspection did not establish useful correction of the three contradicted implications. No claim of multi-agent superiority is supported."
+}

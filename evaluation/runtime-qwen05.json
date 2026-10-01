@@ -1,0 +1,13 @@
+{
+  "model_repository": "Qwen/Qwen2.5-0.5B-Instruct-GGUF",
+  "model_revision": "9217f5db79a29953eb74d5343926648285ec7e67",
+  "model_file": "qwen2.5-0.5b-instruct-q4_k_m.gguf",
+  "model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "model_license": "Apache-2.0",
+  "runtime": "llama.cpp b11317, official Windows CPU x64 binary",
+  "runtime_archive_sha256": "f3b2175f0fc3a7fb1bf53b1eddfeb6fd7a6c34761fec41cb293f6d70ba16288c",
+  "launch_arguments": "--host 127.0.0.1 --port 18089 -c 4096 -t 2 -ngl 0 --parallel 1",
+  "hardware": "Intel Iris Xe laptop; CPU inference only, 16 GiB installed RAM; other user applications running",
+  "model_weights_committed": false,
+  "notes": "Small resource-constrained baseline, not a model selection study. SHA256 checked before loading. First case includes first-request warmup. No provider billing; energy and hardware costs unmeasured."
+}

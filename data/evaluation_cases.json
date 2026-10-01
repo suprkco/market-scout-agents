@@ -1,0 +1,41 @@
+[
+  {
+    "id": "first-wave",
+    "source_ids": [
+      "ec-2024-12"
+    ]
+  },
+  {
+    "id": "second-wave",
+    "source_ids": [
+      "ec-2025-03"
+    ]
+  },
+  {
+    "id": "third-wave",
+    "source_ids": [
+      "ec-2025-10"
+    ]
+  },
+  {
+    "id": "first-and-second",
+    "source_ids": [
+      "ec-2024-12",
+      "ec-2025-03"
+    ]
+  },
+  {
+    "id": "second-and-third",
+    "source_ids": [
+      "ec-2025-03",
+      "ec-2025-10"
+    ]
+  },
+  {
+    "id": "first-and-third",
+    "source_ids": [
+      "ec-2024-12",
+      "ec-2025-10"
+    ]
+  }
+]

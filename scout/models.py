@@ -1,3 +1,4 @@
+from datetime import date
 from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, HttpUrl, StrictBool
@@ -9,6 +10,7 @@ class Source(BaseModel):
     title: str = Field(min_length=1, max_length=300)
     url: HttpUrl
     text: str = Field(min_length=20, max_length=12000)
+    published_at: date | None = None
 
 class Finding(BaseModel):
     model_config = ConfigDict(extra='forbid')

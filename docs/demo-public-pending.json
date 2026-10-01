@@ -1,0 +1,36 @@
+{
+  "status": "awaiting_review",
+  "thread": "public-demo-oct01",
+  "review": {
+    "findings": [
+      {
+        "headline": "First AI Factory selection (December 2024)",
+        "category": "funding",
+        "source_id": "ec-2024-12",
+        "quote": "The first AI Factories will represent a €1.5 billion investment, combining national and EU funding. EuroHPC selected seven proposals in December 2024. The announcement describes selection and planned investment, not measured startup revenue or completed deployment.",
+        "implication": "The €1.5 billion investment is described as a combined national and EU funding, but the actual amount is not specified."
+      },
+      {
+        "headline": "Second AI Factory selection (March 2025)",
+        "category": "funding",
+        "source_id": "ec-2025-03",
+        "quote": "The European High Performance Computing Joint Undertaking (EuroHPC JU) has selected six additional Artificial Intelligence (AI) Factories in the EU. The new locations are Austria, Bulgaria, France, Germany, Poland and Slovenia. Combined national and EU investment is approximately EUR 485 million. The announcement discusses access for startups and SMEs; it does not report observed revenue gains.",
+        "implication": "The €485 million investment is described as a combined national and EU funding, but the actual amount is not specified."
+      },
+      {
+        "headline": "Third AI Factory selection (October 2025)",
+        "category": "funding",
+        "source_id": "ec-2025-10",
+        "quote": "This brings the total to 19 AI Factories across 16 Member States. The October announcement adds six locations and describes more than EUR 500 million of joint EU and national investment for this wave. The updated total is time-specific; selection does not establish that every facility is operational.",
+        "implication": "The total of 19 AI Factories across 16 Member States is described as a combined national and EU funding, but the actual amount is not specified."
+      }
+    ],
+    "concerns": [
+      "The €1.5 billion investment is described as a combined national and EU funding, but the actual amount is not specified.",
+      "The €485 million investment is described as a combined national and EU funding, but the actual amount is not specified.",
+      "The total of 19 AI Factories across 16 Member States is described as a combined national and EU funding, but the actual amount is not specified."
+    ],
+    "evidence_digest": "0cc41085cf0990d609714abf39baba1c7480d49e48c099d1065a3db5834c56cc",
+    "action": "Approve or reject this local report."
+  }
+}

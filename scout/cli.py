@@ -29,7 +29,7 @@ def main():
     parser.add_argument('--thread', required=True)
     parser.add_argument('--db', default='checkpoints.db')
     parser.add_argument('--input', default='data/synthetic_sources.json')
-    parser.add_argument('--mode', choices=['fixture', 'ollama'], default='fixture')
+    parser.add_argument('--mode', choices=['fixture', 'ollama', 'model'], default='fixture')
     parser.add_argument('--reviewer')
     parser.add_argument('--note')
     parser.add_argument('--json', action='store_true', help='Emit the full machine-readable report')

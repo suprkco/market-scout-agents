@@ -1,0 +1,23 @@
+[
+  {
+    "id": "ec-2024-12",
+    "title": "First AI Factory selection (December 2024)",
+    "published_at": "2024-12-10",
+    "text": "The first AI Factories will represent a €1.5 billion investment, combining national and EU funding. EuroHPC selected seven proposals in December 2024. The announcement describes selection and planned investment, not measured startup revenue or completed deployment.",
+    "url": "https://digital-strategy.ec.europa.eu/en/news/seven-consortia-selected-establish-ai-factories-which-will-boost-ai-innovation-eu"
+  },
+  {
+    "id": "ec-2025-03",
+    "title": "Second AI Factory selection (March 2025)",
+    "published_at": "2025-03-12",
+    "text": "The European High Performance Computing Joint Undertaking (EuroHPC JU) has selected six additional Artificial Intelligence (AI) Factories in the EU. The new locations are Austria, Bulgaria, France, Germany, Poland and Slovenia. Combined national and EU investment is approximately EUR 485 million. The announcement discusses access for startups and SMEs; it does not report observed revenue gains.",
+    "url": "https://digital-strategy.ec.europa.eu/en/news/second-wave-ai-factories-set-drive-eu-wide-innovation"
+  },
+  {
+    "id": "ec-2025-10",
+    "title": "Third AI Factory selection (October 2025)",
+    "published_at": "2025-10-10",
+    "text": "This brings the total to 19 AI Factories across 16 Member States. The October announcement adds six locations and describes more than EUR 500 million of joint EU and national investment for this wave. The updated total is time-specific; selection does not establish that every facility is operational.",
+    "url": "https://digital-strategy.ec.europa.eu/en/news/eu-expands-network-ai-factories-strengthening-its-ai-continent-ambition"
+  }
+]
