@@ -1,6 +1,6 @@
 # Case study: evidence review before market-monitoring decisions
 
-**Portfolio prototype, not a client deployment.** Public information only; no employer or client data. Developed with AI assistance.
+**Portfolio prototype, not a client deployment.** Public information only; no employer or client data. Architected and built by Kilian Codaccioni as auditable AI systems, using generative AI as a productivity multiplier, with a strict focus on evaluation, fact validation and reproducibility.
 
 **Business problem.** A consulting analyst monitoring European AI infrastructure needs to distinguish announced funding, selected facilities and demonstrated commercial outcomes. A plausible summary with an incorrect implication can mislead a recommendation even when its citation is genuine.
 
